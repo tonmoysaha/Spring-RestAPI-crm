@@ -21,11 +21,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		Query<Customer> theCustomers = session.createQuery("from Customer order by lastName", Customer.class);
-		return theCustomers.getResultList();
+		List<Customer> customers = theCustomers.getResultList();
+		return customers;
 	}
 
 	@Override
-	public void saceCustomer(Customer theCustomer) {
+	public void saveCustomer(Customer theCustomer) {
 		// TODO Auto-generated method stub
 
 	}

@@ -20,7 +20,7 @@
 
 
 	<dependencies>
-	<!-- spring framwork -->
+		<!-- spring framwork -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -38,7 +38,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-        <!-- spring security -->
+		<!-- spring security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
@@ -50,7 +50,7 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>${springframwork.security}</version>
 		</dependency>
-        <!-- database setting  -->
+		<!-- database setting -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.46</version>
+			<version>5.1.47</version>
 		</dependency>
 
 		<dependency>
