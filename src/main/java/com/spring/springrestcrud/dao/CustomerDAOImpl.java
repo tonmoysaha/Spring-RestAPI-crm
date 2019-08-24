@@ -12,10 +12,10 @@ import com.spring.springrestcrud.entity.Customer;
 
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
-	
+
 	@Autowired
-    private SessionFactory sessionFactory;
-	
+	private SessionFactory sessionFactory;
+
 	@Override
 	public List<Customer> getCustomers() {
 		// TODO Auto-generated method stub
@@ -27,14 +27,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
 	public void saveCustomer(Customer theCustomer) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public Customer getCustomer(int customerId) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.getCurrentSession();
+
+		Customer customer = session.get(Customer.class, customerId);
+
+		return customer;
 	}
 
 	@Override
