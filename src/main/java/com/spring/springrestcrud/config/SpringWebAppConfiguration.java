@@ -33,6 +33,14 @@ public class SpringWebAppConfiguration {
 	private Environment env;
 
 	Logger logger = Logger.getLogger(getClass().getName());
+	
+	@Bean
+	public ViewResolver internalViewResolver() {
+		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		viewResolver.setPrefix("/WEB-INF/view/");
+		viewResolver.setSuffix(".jsp");
+		return viewResolver;
+	}
 
 	@Bean
 	public DataSource myDataSource() {

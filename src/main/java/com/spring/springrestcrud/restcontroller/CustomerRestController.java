@@ -3,6 +3,7 @@ package com.spring.springrestcrud.restcontroller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,5 +53,16 @@ public class CustomerRestController {
 		customerservice.saveCustomer(customer);
 		return customer;
 		
+	}
+	
+	@DeleteMapping("/customers/{customerId}")
+	public String deleteCustomer(@PathVariable int customerId ) {
+		Customer thCustomer =  customerservice.getCustomer(customerId);
+		if (thCustomer == null) {
+			throw new CustomNotFoundException("the person with this id is invalid: "+customerId);
+		}
+		customerservice.deleteCustomer(customerId);
+		
+		return "customerdeleted successfully: " + customerId;
 	}
 }
